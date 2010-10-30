@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Processor: `uname -p | sed 's/___//g;s/__/ /g;s/_/ /g'`"
+echo "Memory: `free -g | grep "Mem" | awk -F ' ' '{ print $3 }'`/`free -g | grep "Mem" | awk -F ' ' '{ print $2 }'` GB"
+echo "Free disk space on root: `df -h /dev/sdc1 | grep /dev/sdc1 | awk -F ' ' '{ print $4 }'`"
+echo "System: Linus `uname -r`" 

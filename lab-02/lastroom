@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+	echo "Błędna liczba argumentów, przykład: $0 mskiba"
+	exit 1
+fi
+
+POKOJ="`last -200 -ad $1 | grep 'labpk' | head -1 | sed 's/.*p\([0-9]*\)\-.*/\1/'`"
+
+if [ -n "$POKOJ" ]; then
+	echo "$1 ostatnio logował się w pokoju $POKOJ"
+else
+	echo "$1 ostatnio się nie logował"
+fi
