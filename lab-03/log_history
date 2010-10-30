@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo -n "Username: "
+read USERNAME
+
+echo -n "Date: "
+read DATE
+
+ILE_RAZY=$(last -ad "$USERNAME" | grep "$DATE" | wc -l)
+
+if [ -n "$ILE_RAZY" ]; then
+	echo "User $USERNAME logged $ILE_RAZY times on $DATE"
+fi
