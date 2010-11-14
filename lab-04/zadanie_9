@@ -1,0 +1,8 @@
+1. du --max-depth=1
+Ma Pokazać ile ważą katalogi i uwzględniając 1 katalog w głąb.
+
+2. du --max-depth=1 2> /dev/null
+Ma pokazać ile ważą katalogi i uwzględniają 1 katalog w głąb, a wszystkie błędy programu przekierowuje do /dev/null czyli do 'kosza'.
+
+du --max-depth=1 2> /dev/null | sort -n | head -1     - Najmniejszy katalog
+du --max-depth=1 2> /dev/null | sort -n | tail -2 | egrep -v '\.$'        - Największy katalog
