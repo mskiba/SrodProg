@@ -1,0 +1,5 @@
+1. plik, które mają ustawione prawo do zapisu dla wszystkich (opcja -perm): find ~ -type f -perm -a+w
+2. pliki, do których uzyskiwano dostęp dawniej niż tydzień temu (opcja -atime): find ~ -type f -atime +7
+3. pliki większe niż 100 kilobajtów (opcja -size): find ~ -type f -size +100k
+4. pliki puste: find ~ -type f -size 0c
+5. pliki nieużywane przez miesiąc (niech miesiąc = 30 dni), które mają więcej niż 500 kilobajtów: find ~ -type f -used 30 -size +512k
